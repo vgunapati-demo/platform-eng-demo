@@ -20,7 +20,7 @@ spec:
    spec:
      project: platform-eng
      source:
-       repoURL: https://github.com/vgunapati-demo/argocon-demo.git
+       repoURL: https://github.com/vgunapati-demo/platform-eng-demo.git
        targetRevision: HEAD
        path: 'event-router'
      destination:
