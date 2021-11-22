@@ -6,11 +6,11 @@ spec:
  generators:
  - list:
      elements:
-     - cluster: vcluster3
+     - cluster: vcluster-3
        url: ""
-     - cluster: vcluster1
+     - cluster: vcluster-1
        url: ""
-     - cluster: vcluster2
+     - cluster: vcluster-2
        url: ""
  template:
    metadata:
