@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+ name: prereq-event-router
+spec:
+ generators:
+ - list:
+     elements:
+     - cluster: vcluster3
+       url: ""
+     - cluster: vcluster1
+       url: ""
+     - cluster: vcluster2
+       url: ""
+ template:
+   metadata:
+     name: 'prereq-event-router.{{cluster}}'
+     labels:
+       appset: prereq-event-router
+   spec:
+     project: platform-eng
+     source:
+       repoURL: https://github.com/vgunapati-demo/argocon-demo.git
+       targetRevision: HEAD
+       path: 'event-router'
+     destination:
+       name: '{{cluster}}'
+       namespace: event-router
